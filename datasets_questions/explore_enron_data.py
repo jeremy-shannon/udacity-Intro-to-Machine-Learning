@@ -19,9 +19,36 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
-count = 0
-for person in enron_data:
-    if enron_data[person]['poi'] == 1:
-        count = count +1
+people = 0
+poiCount = 0
+salaryCount = 0
+emailAddressCount = 0
+totalPaymentsCount = 0
 
-print count
+for person in enron_data:
+    people = people + 1
+    if enron_data[person]['poi'] == 1:
+        poiCount += 1
+    if enron_data[person]['salary'] != 'NaN':
+        salaryCount += 1
+    if enron_data[person]['email_address'] != 'NaN':
+        emailAddressCount += 1
+    if enron_data[person]['total_payments'] != 'NaN':
+        totalPaymentsCount += 1
+
+print "Enron data poi count:",poiCount
+
+poiFile = open("../final_project/poi_names.txt")
+poiCount = 0
+lines = poiFile.readlines() 
+for line in lines:
+    if line[0] == '(':
+        poiCount += 1
+print "Total POIs:",poiCount
+
+print "people:", people
+print "salaries:", salaryCount
+print "email addresses:", emailAddressCount
+print "total payments count:", totalPaymentsCount
+
+print "percent people with total payments", float(people - totalPaymentsCount)/float(people)
