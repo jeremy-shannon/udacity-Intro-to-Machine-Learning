@@ -42,17 +42,18 @@ for person in enron_data:
 print "Enron data poi count:",poiCount
 
 poiFile = open("../final_project/poi_names.txt")
-poiCount = 0
+poiCount2 = 0
 lines = poiFile.readlines() 
 for line in lines:
     if line[0] == '(':
-        poiCount += 1
-print "Total POIs:",poiCount
+        poiCount2 += 1
+print "Total POIs:",poiCount2
 
 print "people:", people
 print "salaries:", salaryCount
 print "email addresses:", emailAddressCount
 print "total payments count:", totalPaymentsCount
+print "POI total payments count:", poiTotalPaymentsCount
 
-print "percent people with total payments:", float(people - totalPaymentsCount)/float(people)
-print "percent POIs with total payments:", float(poiCount - poiTotalPaymentsCount)/float(poiCount)
+print "percent people without total payments:", float(people - totalPaymentsCount)/float(people)
+print "percent POIs without total payments:", float(poiCount - poiTotalPaymentsCount)/float(poiCount)
