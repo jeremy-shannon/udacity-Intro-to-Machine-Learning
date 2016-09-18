@@ -24,11 +24,14 @@ poiCount = 0
 salaryCount = 0
 emailAddressCount = 0
 totalPaymentsCount = 0
+poiTotalPaymentsCount = 0
 
 for person in enron_data:
     people = people + 1
     if enron_data[person]['poi'] == 1:
         poiCount += 1
+        if enron_data[person]['total_payments'] != 'NaN':
+            poiTotalPaymentsCount += 1
     if enron_data[person]['salary'] != 'NaN':
         salaryCount += 1
     if enron_data[person]['email_address'] != 'NaN':
@@ -51,4 +54,5 @@ print "salaries:", salaryCount
 print "email addresses:", emailAddressCount
 print "total payments count:", totalPaymentsCount
 
-print "percent people with total payments", float(people - totalPaymentsCount)/float(people)
+print "percent people with total payments:", float(people - totalPaymentsCount)/float(people)
+print "percent POIs with total payments:", float(poiCount - poiTotalPaymentsCount)/float(poiCount)
