@@ -32,11 +32,16 @@ plt.show()
 ### visualization code (prettyPicture) to show you the decision boundary
 
 
+from sklearn.ensemble import RandomForestClassifier
+clf = RandomForestClassifier()
+clf.fit(features_train, labels_train)
+print "acc: ", clf.score(features_test, labels_test)
 
 
-
-
-
+from sklearn.neighbors import KNeighborsClassifier
+clf = KNeighborsClassifier(n_neighbors=1, algorithm='auto', weights='distance')
+clf.fit(features_train, labels_train)
+print "acc: ", clf.score(features_test, labels_test)
 
 try:
     prettyPicture(clf, features_test, labels_test)
