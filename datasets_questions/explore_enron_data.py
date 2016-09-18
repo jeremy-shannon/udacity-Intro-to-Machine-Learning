@@ -19,4 +19,9 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
+count = 0
+for person in enron_data:
+    if enron_data[person]['poi'] == 1:
+        count = count +1
 
+print count
