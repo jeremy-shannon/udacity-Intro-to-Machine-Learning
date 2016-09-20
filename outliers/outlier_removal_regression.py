@@ -81,6 +81,7 @@ if len(cleaned_data) > 0:
     plt.xlabel("ages")
     plt.ylabel("net worths")
     print "new slope:", reg.coef_[0]
+    print "new score:", reg.score(ages_test, net_worths_test)
     plt.show()
 
 
