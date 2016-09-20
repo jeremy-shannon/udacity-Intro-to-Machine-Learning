@@ -80,6 +80,7 @@ if len(cleaned_data) > 0:
     plt.scatter(ages, net_worths)
     plt.xlabel("ages")
     plt.ylabel("net worths")
+    print "new slope:", reg.coef_[0]
     plt.show()
 
 
