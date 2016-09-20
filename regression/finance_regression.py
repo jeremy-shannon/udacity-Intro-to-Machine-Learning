@@ -45,6 +45,8 @@ reg.fit(feature_train,target_train)
 print "slope:", reg.coef_[0]
 print "intercept:",reg.intercept_
 
+print "score (train):", reg.score(feature_train, target_train)
+print "score (test):", reg.score(feature_test, target_test)
 
 
 
