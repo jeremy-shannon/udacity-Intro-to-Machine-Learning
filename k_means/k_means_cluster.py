@@ -43,18 +43,18 @@ data_dict = pickle.load( open("../final_project/final_project_dataset.pkl", "r")
 ### there's an outlier--remove it! 
 data_dict.pop("TOTAL", 0)
 
-esoMin = 10000000
-esoMax = 0
+salMin = 10000000
+salMax = 0
 for k in data_dict:
-    eso = data_dict[k]["exercised_stock_options"]
-    if eso != 'NaN':
-        if eso < esoMin:
-            esoMin = eso
-        if eso > esoMax:
-            esoMax = eso
+    sal = data_dict[k]["salary"]
+    if sal != 'NaN':
+        if sal < salMin:
+            salMin = sal
+        if sal > salMax:
+            salMax = sal
 
-print "min:", esoMin
-print "max:", esoMax 
+print "min:", salMin
+print "max:", salMax 
 
 
 ### the input features we want to use 
