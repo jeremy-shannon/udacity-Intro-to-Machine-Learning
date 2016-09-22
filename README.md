@@ -2,7 +2,9 @@
 
 My solutions to the Udacity course "Intro to Machine Learning"
 
-Forked from:
+Cloned from:
+
+https://github.com/udacity/ud120-projects
 
 ud120-projects
 ==============
