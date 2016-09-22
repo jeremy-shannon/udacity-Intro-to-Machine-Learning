@@ -1,3 +1,9 @@
+**Intro to Machine Learning**
+
+My solutions to the Udacity course "Intro to Machine Learning"
+
+Forked from:
+
 ud120-projects
 ==============
 
