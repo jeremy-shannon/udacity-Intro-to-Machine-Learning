@@ -34,7 +34,7 @@ def parseOutText(f):
         ### and append the stemmed word to words (make sure there's a single
         ### space between each stemmed word)
 
-        wordsIn = string.split(text_string, ' ')
+        wordsIn = string.split(text_string)
         words = ""
 
         from nltk.stem.snowball import SnowballStemmer
