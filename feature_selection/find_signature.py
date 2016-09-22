@@ -38,6 +38,19 @@ labels_train   = labels_train[:150]
 
 
 ### your code goes here
+from sklearn.tree import DecisionTreeClassifier
+clf = DecisionTreeClassifier()
+clf.fit(features_train, labels_train)
+print "accuracy:", clf.score(features_test, labels_test)
 
+problemWordIndices = []
 
+importances = clf.feature_importances_
+for index in range(len(importances)):
+    if importances[index] > 0.2:
+        print "index:", index
+        problemWordIndices.append(index)
+        print "importance:", importances[index]
 
+for index in problemWordIndices:
+    print "problem word:", vectorizer.get_feature_names()[index]

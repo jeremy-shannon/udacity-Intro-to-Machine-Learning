@@ -54,6 +54,7 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
             ### ["sara", "shackleton", "chris", "germani"]
             emailText = emailText.replace("sara", "").replace("shackleton", "")
             emailText = emailText.replace("chris", "").replace("germani","")
+            emailText = emailText.replace("sshacklensf", "").replace("cgermannsf","")
 
             ### append the text to word_data
             word_data.append(emailText)
